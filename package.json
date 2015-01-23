@@ -1,0 +1,29 @@
+{
+  "name": "entitlements",
+  "version": "0.1.0",
+  "description": "check the entitlements of a .app bundle",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matiassingers/entitlements"
+  },
+  "author": "Matias Singers <mail@matiassingers.com> (http://mts.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matiassingers/entitlements/issues"
+  },
+  "homepage": "https://github.com/matiassingers/entitlements",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "2.1.0"
+  }
+}
