@@ -13,7 +13,12 @@ $ npm install --save entitlements
 ```js
 var entitlements = require('entitlements');
 
-entitlements()
+entitlements('./Payload/Facebook.app/', function(error, data){
+  console.log(data);
+  // => { "application-identifier": "com.facebook.facebook",
+  //      "get-task-allow": false,
+  //      ... }
+});
 
 ```
 
@@ -27,9 +32,14 @@ $ npm install --global entitlements
 ```sh
 $ entitlements --help
 
+  check the entitlements of a .app bundle
+
   Example
-    entitlements
-    
+    entitlements ./Payload/Facebook.app/
+
+    => { "application-identifier": "com.facebook.facebook",
+         "get-task-allow":false,
+         ... }
 ```
 
 
