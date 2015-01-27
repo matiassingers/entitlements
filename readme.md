@@ -43,6 +43,13 @@ $ entitlements --help
 ```
 
 
+## Related
+- [`grunt-xcode`](https://github.com/matiassingers/grunt-xcode)
+- [`apn-test`](https://github.com/matiassingers/apn-test)
+- [`ipa-metadata`](https://github.com/matiassingers/ipa-metadata)
+- [`provisioning`](https://github.com/matiassingers/provisioning)
+
+
 ## License
 
 MIT © [Matias Singers](http://mts.io)
