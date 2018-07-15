@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/matiassingers/entitlements",
   "dependencies": {
+    "shell-escape": "0.2.0",
     "simple-plist": "0.3.0"
   },
   "devDependencies": {
