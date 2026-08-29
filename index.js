@@ -1,17 +1,34 @@
 'use strict';
 
-var exec = require('child_process').exec;
+var execFile = require('child_process').execFile;
 var plist = require('simple-plist');
-var shellescape = require('shell-escape');
 
 module.exports = function(path, callback){
-  var args = ['codesign', '-d', '--entitlements :-', path];
+  if(typeof callback !== 'function'){
+    throw new TypeError('callback must be a function');
+  }
 
-  exec(shellescape(args), function(error, output){
+  if(typeof path !== 'string' || path.length === 0){
+    return process.nextTick(function(){
+      callback(new TypeError('path must be a non-empty string'));
+    });
+  }
+
+  var args = ['-d', '--entitlements', '-', '--xml', '--', path];
+
+  execFile('codesign', args, function(error, output){
     if(error){
       return callback(error);
     }
 
-    callback(null, plist.parse(output));
+    var data;
+
+    try {
+      data = plist.parse(output);
+    } catch(parseError){
+      return callback(parseError);
+    }
+
+    callback(null, data);
   });
 };
